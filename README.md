@@ -1,59 +1,64 @@
-# AngularComponents
+# Angular Reusable UI Components
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+> Una raccolta di componenti UI modulari, riutilizzabili e stilisticamente neutri per applicazioni Angular, costruiti con TypeScript e SCSS.
 
-## Development server
+---
 
-To start a local development server, run:
+## Caratteristiche
 
-```bash
-ng serve
+- Componenti standalone facili da integrare
+- Stile pulito e minimale, personalizzabile
+- Componenti comuni: Button, Alert, Card, Loader, Modal, Toast, FormField, Input, Textarea, Navbar, Sidebar, Tabs, Accordion
+- Gestione interna dello stato (es. apertura/chiusura modale, tabs, ecc.)
+
+---
+
+## Componenti inclusi
+
+| Componente   | Descrizione                         |
+|--------------|-----------------------------------|
+| Button       | Pulsante con evento click          |
+| Alert        | Messaggi di notifica (info, error, success) |
+| Card         | Contenitore con bordo e ombra     |
+| Loader       | Indicatore di caricamento          |
+| Modal        | Finestra modale riutilizzabile     |
+| Toast        | Notifica a comparsa                |
+| FormField    | Wrapper per input e textarea con label e error |
+| Input        | Campo input semplice               |
+| Textarea     | Campo textarea                    |
+| Navbar       | Barra di navigazione               |
+| Sidebar      | Menu laterale                     |
+| Tabs         | Componenti a schede               |
+| Accordion    | Sezioni a espansione              |
+
+---
+
+## Installazione
+
+Copia i file dei componenti nel tuo progetto Angular e aggiungi i componenti al modulo condiviso:
+
+```ts
+import { NgModule } from '@angular/core';
+import { ButtonComponent } from './button/button.component';
+// importa gli altri componenti...
+
+@NgModule({
+  declarations: [
+    ButtonComponent,
+    // altri componenti...
+  ],
+  exports: [
+    ButtonComponent,
+    // altri componenti...
+  ]
+})
+export class SharedModule {}
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+## Esempio di utilizzo
 ```
+<app-button label="Salva" (clicked)="onSave()"></app-button>
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+<app-modal triggerLabel="Apri Modale">
+  <p>Contenuto personalizzato</p>
+</app-modal>
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
