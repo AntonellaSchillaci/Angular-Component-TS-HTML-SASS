@@ -1,0 +1,11 @@
+<div class="textarea-group">
+  <label *ngIf="label">{{ label }}</label>
+  <textarea
+    [rows]="rows"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onChange($event)"
+    [attr.aria-label]="label || placeholder"
+    title="{{label || placeholder}}"
+  ></textarea>
+</div>

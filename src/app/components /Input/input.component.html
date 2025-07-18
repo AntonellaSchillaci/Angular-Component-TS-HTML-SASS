@@ -1,0 +1,11 @@
+<div class="input-group">
+  <label *ngIf="label">{{ label }}</label>
+  <input
+    [type]="type"
+    [value]="value"
+    [placeholder]="placeholder"
+    (input)="onInputChange($event)"
+    [attr.aria-label]="label"
+    title="{{label}}"
+  />
+</div>

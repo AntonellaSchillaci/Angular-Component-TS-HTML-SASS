@@ -1,0 +1,5 @@
+<div class="form-field">
+  <label *ngIf="label" class="form-label">{{ label }}</label>
+  <ng-content></ng-content>
+  <div *ngIf="error" class="form-error">{{ error }}</div>
+</div>

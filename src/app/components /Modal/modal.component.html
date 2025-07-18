@@ -1,0 +1,7 @@
+<button (click)="open()" class="modal-trigger">{{ triggerLabel }}</button>
+<div class="modal-backdrop" *ngIf="isOpen" (click)="close()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="close()">&times;</button>
+    <ng-content></ng-content>
+  </div>
+</div>
